@@ -1,38 +1,65 @@
-#ifndef PHONEBOOK
-#define PHONEBOOK
+#ifndef PHONEBOOK_HPP
+#define PHONEBOOK_HPP
 
 const int MAX_CONTACTS = 8;
 
 
 class Contact
 {
-public:
+private:
     std::string f_name;
     std::string l_name;
     std::string nickname;
     std::string phone;
+    std::string secret
 
-    Contact() : f_name(""), l_name(""), nickname(""), phone() {}
-    Contact(std::string f_name, std::string l_name, std::string nickname, std::string phone) : f_name(f_name), l_name(f_name), nickname(nickname), phone(phone) {}
+public:
+    //getters
+    std::string getFirstName(const std::string f_name){
+        return f_name;
+    }
+    std::string getLastName(const std::string l_name){
+        return l_name;
+    }
+    std::string getNickname(const std::string nickname){
+        return nickname;
+    }
+    std::string getPhone(const std::string phone){
+        return phone;
+    }
+    std::string getSecret(const std::string secret){
+        return secret;
+    }
+
+    //setter
+    void setFirstName(const std::string& f_name) {
+        this->f_name = f_name;
+    }
+
+    void setLastName(const std::string& l_name) {
+        this->l_name = l_name;
+    }
+
+    void setNickname(const std::string& nickname) {
+        this->nickname = nickname;
+    }
+
+    void setPhone(const std::string& phone) {
+        this->phone = phone;
+    }
+    void displayContact(int index);
 };
 
-class phonebook
+class Phonebook
 {
 private:
-    Contact contacts[MAX_CONTACTS];
-    int nb_of_contacts = 0;
+    Contact _contacts[MAX_CONTACTS];
+    int indexContacts = 0;
 public:
-    phonebook(/* args */);
-    ~phonebook();
+    void addContact(void) const;
+    void searchContact(void) const;
 };
 
-phonebook::phonebook(/* args */)
-{
-}
-
-phonebook::~phonebook()
-{
-}
 
 
 #endif

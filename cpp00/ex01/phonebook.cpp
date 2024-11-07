@@ -2,30 +2,40 @@
 #include <string>
 #include "phonebook.hpp"
 
+
+void searchContact(void)
+{
+    //...
+}
+
+void addContact(void)
+{
+
+    std::string name;
+    std::cout << "Enter first name: ";
+    std::getline(std::cin, name);
+    std::cout << "Enter last name: ";
+    std::getline(std::cin, name);
+    std::cout << "Enter nickname: ";
+    std::getline(std::cin, name);
+    std::cout << "Enter phone number: ";
+    std::getline(std::cin, name);
+}
+
+
 int main(void)
 {
+    Phonebook phonebook;
     std::string command;
-    std:: string f_name, l_name, nickname, phone;
+    std:: string name;
     while(true)
     {
         std::cout << "Enter a command: ";
         std::getline(std::cin, command);
         if(command == "ADD")
-        {
-            std::cout << "Enter first name: ";
-            std::getline(std::cin, f_name);
-            std::cout << "Enter last name: ";
-            std::getline(std::cin, l_name);
-            std::cout << "Enter nickname: ";
-            std::getline(std::cin, nickname);
-            std::cout << "Enter phone number: ";
-            std::getline(std::cin, phone);
-        }
+            phonebook.addContact();
         else if(command == "SEARCH")
-        {
-            continue ;
-        }
-
+            phonebook.searchContact();
         else if(command == "EXIT")
             break ;
         else
