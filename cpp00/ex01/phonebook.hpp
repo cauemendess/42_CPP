@@ -1,9 +1,25 @@
 #ifndef PHONEBOOK_HPP
 #define PHONEBOOK_HPP
 
+#include <iostream>
+#include <string>
+#include <iomanip>
+
+//colors
+const std::string BLACK = "\033[30m";
+const std::string RED = "\033[31m";
+const std::string GREEN = "\033[32m";
+const std::string YELLOW = "\033[33m";
+const std::string BLUE = "\033[34m";
+const std::string MAGENTA = "\033[35m";
+const std::string CYAN = "\033[36m";
+const std::string WHITE = "\033[37m";
+const std::string RESET = "\033[0m";
+
+//macros
 const int MAX_CONTACTS = 8;
 
-
+//classes
 class Contact
 {
 private:
@@ -11,24 +27,24 @@ private:
     std::string l_name;
     std::string nickname;
     std::string phone;
-    std::string secret
+    std::string secret;
 
 public:
     //getters
-    std::string getFirstName(const std::string f_name){
-        return f_name;
+    std::string getFirstName(void) const {
+        return this->f_name;
     }
-    std::string getLastName(const std::string l_name){
-        return l_name;
+    std::string getLastName(void) const {
+        return this->l_name;
     }
-    std::string getNickname(const std::string nickname){
-        return nickname;
+    std::string getNickname(void) const {
+        return this->nickname;
     }
-    std::string getPhone(const std::string phone){
-        return phone;
+    std::string getPhone(void) const {
+        return this->phone;
     }
-    std::string getSecret(const std::string secret){
-        return secret;
+    std::string getSecret(void) const {
+        return this->secret;
     }
 
     //setter
@@ -47,19 +63,23 @@ public:
     void setPhone(const std::string& phone) {
         this->phone = phone;
     }
-    void displayContact(int index);
+    void setSecret(const std::string& secret) {
+        this->secret = secret;
+    }
+    void displayContact(void);
 };
 
 class Phonebook
 {
 private:
     Contact _contacts[MAX_CONTACTS];
-    int indexContacts = 0;
+    int _indexContacts;
+    int _size;
 public:
-    void addContact(void) const;
-    void searchContact(void) const;
+    Phonebook();
+    ~Phonebook();
+    void addContact(void);
+    void searchContact(void);
 };
-
-
 
 #endif
