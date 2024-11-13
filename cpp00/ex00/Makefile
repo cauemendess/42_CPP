@@ -1,12 +1,58 @@
-CC = c++
-NAME = megaphone
-CFLAGS = -Wall -Wextra -Werror -std=c++98
+#------------------------------------------------------------------------------#
+#                                  GENERICS                                    #
+#------------------------------------------------------------------------------#
 
-SRC = megaphone.cpp
-all:
-	@$(CC) $(SRC) $(CFLAGS) -o $(NAME)
+# Special variables
+.DEFAULT_GOAL := all
+.DELETE_ON_ERROR:
+.PHONY: all bonus clean fclean re
 
+# Hide calls
+VERBOSE ?= TRUE
+ifeq ($(VERBOSE),TRUE)
+    HIDE =
+else
+    HIDE = @
+endif
+
+#------------------------------------------------------------------------------#
+#                                VARIABLES                                     #
+#------------------------------------------------------------------------------#
+
+# Compiler and flags
+CC      =   c++
+CFLAGS  =   -Wall -Werror -Wextra -std=c++98 -I.
+RM      =   rm -rf
+
+# Dir and file names
+NAME    =   megaphone
+SRCS    =   megaphone.cpp
+OBJS    =   $(SRCS:.cpp=.o)
+INC     =   $(wildcard *.hpp)
+
+#------------------------------------------------------------------------------#
+#                                 TARGETS                                      #
+#------------------------------------------------------------------------------#
+
+all: $(NAME)
+
+# Generates output file
+$(NAME): $(OBJS)
+	$(HIDE)$(CC) $(CFLAGS) $(OBJS) -o $@
+
+# Compiles sources into objects
+%.o: %.cpp $(INC)
+	$(HIDE)$(CC) $(CFLAGS) -c $< -o $@
+
+# Removes objects
 clean:
-	@rm -rf megaphone
+	$(HIDE)$(RM) $(OBJS)
+
+# Removes objects and executables
+fclean: clean
+	$(HIDE)$(RM) $(NAME)
+
+# Removes objects and executables and remakes
+re: fclean all
 
 

@@ -14,6 +14,7 @@ int	main(int argc, char **argv)
 		for (size_t size = 0; size < text.length(); size++)
 			text[size] = (char)std::toupper(text[size]);
 		std::cout << text;
+		std::cout << ' ';
 	}
 	std::cout << std::endl;
 	return (0);
