@@ -48,11 +48,11 @@ public:
     }
 
     //setter
-    void setFirstName(const std::string& f_name);
-    void setLastName(const std::string& l_name);
-    void setNickname(const std::string& nickname);
-    void setPhone(const std::string& phone);
-    void setSecret(const std::string& secret);
+    void setFirstName(std::string f_name);
+    void setLastName(std::string l_name);
+    void setNickname(std::string nickname);
+    void setPhone(std::string phone);
+    void setSecret(std::string secret);
     void displayContact(void);
 };
 
