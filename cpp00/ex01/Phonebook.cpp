@@ -1,4 +1,4 @@
-#include "phonebook.hpp"
+#include "Phonebook.hpp"
 
 Phonebook::Phonebook(void)
 {
@@ -41,6 +41,11 @@ void Phonebook::searchContact(void)
 	int	i;
 
 	std::string index;
+	if(_size == 0)
+	{
+		std::cout << RED << "No contact to search" << std::endl;
+		return ;
+	}
 	i = 0;
 	std::cout << std::setw(10) << "index"
 				<< "|";
