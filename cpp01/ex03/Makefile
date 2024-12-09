@@ -27,7 +27,11 @@ RM		=	rm -rf
 
 # Dir and file names
 NAME	=	violence
-SRCS	=	main.cpp
+SRCS	=	main.cpp \
+			HumanA.cpp \
+			HumanB.cpp \
+			Weapon.cpp
+
 OBJS	=	$(SRCS:.cpp=.o)
 INC		=	$(wildcard *.hpp)
 
