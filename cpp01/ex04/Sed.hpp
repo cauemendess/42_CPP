@@ -24,7 +24,7 @@ private:
     std::string _filename;
 public:
     Sed(std::string s1, std::string s2, std::string filename);
-    void replace();
+    int replace();
 };
 
 

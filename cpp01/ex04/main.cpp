@@ -11,7 +11,7 @@ int main(int argc, char **argv)
     std::string s1 = argv[2];
     std::string s2 = argv[3];
     Sed action(s1, s2, filename);
-    action.replace();
+    return(action.replace());
 
 
 }

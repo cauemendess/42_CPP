@@ -47,7 +47,7 @@ $(NAME): $(OBJS)
 	$(HIDE)$(CC) $(CFLAGS) $(OBJS) -o $@
 
 # Compiles sources into objects
-.cpp.o: $(SRCS) $(INC)
+%.o: %.cpp $(INC)
 	$(HIDE)$(CC) $(CFLAGS) -c $< -o $@
 
 # Removes objects
