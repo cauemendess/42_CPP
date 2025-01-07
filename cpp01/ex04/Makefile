@@ -26,7 +26,7 @@ CFLAGS	=	-Wall -Werror -Wextra -std=c++98 -I.
 RM		=	rm -rf
 
 # Dir and file names
-NAME	=	sed
+NAME	=	mysed
 SRCS	=	main.cpp Sed.cpp
 
 OBJS	=	$(SRCS:.cpp=.o)
