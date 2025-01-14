@@ -21,22 +21,12 @@ private:
 	static const int _fraqBits = 8;
 public:
 	Fixed();
+	Fixed(const Fixed& other);
+	Fixed &operator=(const Fixed &other);
 	~Fixed();
 	int getRawBits() const;
-	void setRawbits(int const raw);
+	void setRawBits(int const raw);
 };
-
-Fixed::Fixed()
-{
-	std::cout << "Default constructor called" << std::endl;
-}
-
-Fixed::~Fixed()
-{
-	std::cout << "Default destructor called" << std::endl;
-}
-
-
 
 
 
