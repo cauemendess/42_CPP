@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include <string>
+#include <cmath>
 
 const std::string RED = "\033[31m";
 const std::string CYAN = "\033[36m";
@@ -21,13 +22,18 @@ private:
 	static const int _fraqBits = 8;
 public:
 	Fixed();
+	Fixed(const int value);
+	Fixed(const float value);
 	Fixed(const Fixed& other);
 	Fixed &operator=(const Fixed &other);
 	~Fixed();
 	int getRawBits() const;
 	void setRawBits(int const raw);
+	int  toInt() const;
+	float toFloat() const;
 };
 
+std::ostream &operator<<(std::ostream &out, Fixed const &value);
 
 
 #endif
