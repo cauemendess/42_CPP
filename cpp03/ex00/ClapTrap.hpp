@@ -14,15 +14,16 @@ private:
 public:
     ClapTrap();
     ClapTrap(std::string name);
-    ClapTrap(const ClapTrap &other);
+    ClapTrap(const ClapTrap &copy);
     ~ClapTrap();
     void attack(const std::string& target);
     void takeDamage(unsigned int amount);
     void beRepaired(unsigned int amount);
+    std::string getName() const;
+    int getAttackDamage() const;
+
+    
 };
-
-
-
 
 
 #endif
