@@ -1,7 +1,5 @@
 #include "ClapTrap.hpp"
 
-
-
 int main() 
 {
     std::cout << YELLOW "Creating ClapTraps..." RESET << std::endl;
