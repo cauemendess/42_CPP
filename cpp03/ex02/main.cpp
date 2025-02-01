@@ -3,14 +3,6 @@
 #include "ScavTrap.hpp"
 #include "FragTrap.hpp"
 
-#define RED     "\033[31m"
-#define GREEN   "\033[32m"
-#define YELLOW  "\033[33m"
-#define BLUE    "\033[34m"
-#define INVERSE "\033[7m"
-#define RESET   "\033[0m"
-
-
 void battleSequence(ClapTrap& attacker, ClapTrap& defender) 
 {
     std::cout << RED "\n[ATTACK] " RESET << attacker.getName() << " attacks " << defender.getName() << "!" << std::endl;
