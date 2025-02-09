@@ -7,14 +7,6 @@
 #define RED "\033[31m"
 #define GREEN "\033[32m"
 
-#include "ClapTrap.hpp"
-#include "ScavTrap.hpp"
-#include <iostream>
-
-#define RESET "\033[0m"
-#define YELLOW "\033[33m"
-#define RED "\033[31m"
-#define GREEN "\033[32m"
 
 int main() {
     std::cout << YELLOW "Creating ClapTrap and ScavTrap..." RESET << std::endl;
