@@ -29,6 +29,10 @@ int main() {
     std::cout << GREEN "\n[Repair]" RESET " FragTrap repairs himself!" << std::endl;
     fragTrap.beRepaired(5);
     
+    std::cout << RED "\n[Attack]" RESET " FragTrap attacks ClapTrap!" << std::endl;
+    fragTrap.attack(clapTrap.getName());
+    clapTrap.takeDamage(fragTrap.getAttackDamage());
+    
     std::cout << YELLOW "\nBattle over!" RESET << std::endl;
     
     scavTrap.guardGate();
