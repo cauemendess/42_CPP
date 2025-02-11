@@ -6,21 +6,17 @@
 
 class WrongAnimal
 {
-private:
-	/* data */
+protected:
+	std::string _type;
 public:
-	WrongAnimal(/* args */);
+	WrongAnimal();
+	WrongAnimal(const WrongAnimal &other);
+    std::string getType(void) const;
+	void makeSound() const;
+    Animal &operator=(const Animal &rigthSide);
+
 	~WrongAnimal();
 };
-
-WrongAnimal::WrongAnimal(/* args */)
-{
-}
-
-WrongAnimal::~WrongAnimal()
-{
-}
-
 
 
 #endif
