@@ -11,13 +11,20 @@ WrongAnimal::~WrongAnimal()
 }
 
 
-WrongAnimal::WrongAnimal(const WrongAnimal &copy)
+WrongAnimal::WrongAnimal(const WrongAnimal &other)
 {
 	std::cout << BOLD << "WrongAnimal Copy constructor called" << RESET << std::endl;
-	*this = copy;
+	*this = other;
 }
 
-WrongAnimal &WrongAnimal::operator=(WrongAnimal const &rightSide)
+
+WrongAnimal::WrongAnimal(std::string name) : _type(name)
+{
+	std::cout << GREEN << "Creating a animal from the type: " << MAGENTA << this->_type << RESET << std::endl;
+}
+
+
+WrongAnimal &WrongAnimal::operator=(const WrongAnimal &rightSide)
 {
 	std::cout << BOLD << "WrongAnimal Assignation operator called" << RESET << std::endl;
 	this->_type = rightSide._type;
