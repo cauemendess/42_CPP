@@ -5,7 +5,7 @@
 
 class WrongCat: public WrongAnimal
 {
-  public:
+public:
 	WrongCat();
 	WrongCat(const WrongCat &other);
     ~WrongCat();

@@ -5,7 +5,7 @@
 
 class Cat: public Animal
 {
-  public:
+public:
 	Cat();
 	Cat(const Cat &other);
     virtual ~Cat();
