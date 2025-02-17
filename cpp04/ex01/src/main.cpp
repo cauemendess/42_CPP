@@ -6,6 +6,8 @@
 
 int	main()
 {
+    Animal a;
+	std::cout << a.getType() << std::endl;
 	Animal	*array[10];
 	int		i = 0;
 
@@ -21,7 +23,7 @@ int	main()
     std::cout << GREEN << ((Dog *)array[4])->getIdea(4) << RESET << std::endl;
     std::cout << GREEN << ((Dog *)array[7])->getIdea(7) << RESET << std::endl;
 
-    
+
     std::cout << GREEN << "==============DEEP COPY===========" << RESET << std::endl;
     Cat		cat1;
 	std::cout << CYAN << "Cat 1 ideas: " << cat1.getIdea(0) << RESET << std::endl;

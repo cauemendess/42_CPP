@@ -1,7 +1,7 @@
 #include "../includes/Dog.hpp"
 
 
-Dog::Dog() : Animal("Dog"), _brain(new Brain())
+Dog::Dog() : AAnimal("Dog"), _brain(new Brain())
 {
 	std::cout << GREEN << "Dog Default constructor called" << RESET << std::endl;
 }
@@ -13,7 +13,7 @@ Dog::~Dog()
 	this->_brain = NULL;
 }
 
-Dog::Dog(const Dog &copy) : Animal(copy), _brain(new Brain(*copy._brain))
+Dog::Dog(const Dog &copy) : AAnimal(copy), _brain(new Brain(*copy._brain))
 {
 	std::cout << BOLD << "Dog Copy constructor called" << RESET << std::endl;
 }
@@ -25,7 +25,7 @@ Dog &Dog::operator=(const Dog &rightSide)
 	std::cout << BOLD << "Dog Assignation operator called" << RESET << std::endl;
 	if (this != &rightSide)
 	{
-		Animal::operator=(rightSide);
+		AAnimal::operator=(rightSide);
 		newBrain = new Brain(*rightSide._brain);
 		delete this->_brain;
 		this->_brain = newBrain;
