@@ -1,7 +1,7 @@
 #include "../includes/Dog.hpp"
 
 
-Dog::Dog() : Animal("Dog")
+Dog::Dog() : Animal("Dog"), _brain(new Brain())
 {
 	std::cout << GREEN << "Dog Default constructor called" << RESET << std::endl;
 }
@@ -9,6 +9,8 @@ Dog::Dog() : Animal("Dog")
 Dog::~Dog()
 {
 	std::cout << RED << "Dog Destructor called" << RESET << std::endl;
+	delete this->_brain;
+	this->_brain = NULL;
 }
 
 Dog::Dog(const Dog &copy) : Animal(copy)
@@ -17,11 +19,29 @@ Dog::Dog(const Dog &copy) : Animal(copy)
 	*this = copy;
 }
 
-Dog &Dog::operator=(Dog const &rightSide)
+Dog &Dog::operator=(const Dog &rightSide)
 {
+	Brain	*newBrain;
+
 	std::cout << BOLD << "Dog Assignation operator called" << RESET << std::endl;
-	this->_type = rightSide._type;
+	if (this != &rightSide)
+	{
+		Animal::operator=(rightSide);
+		newBrain = new Brain(*rightSide._brain);
+		delete this->_brain;
+		this->_brain = newBrain;
+	}
 	return (*this);
+}
+
+std::string Dog::getIdea(int index) const
+{
+	return (this->_brain->getIdea(index));
+}
+
+void Dog::setIdea(int index, std::string idea)
+{
+	this->_brain->setIdea(index, idea);
 }
 
 void Dog::makeSound(void) const

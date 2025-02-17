@@ -20,7 +20,7 @@ WrongAnimal::WrongAnimal(const WrongAnimal &other)
 
 WrongAnimal::WrongAnimal(std::string name) : _type(name)
 {
-	std::cout << GREEN << "Creating a animal from the type: " << MAGENTA << this->_type << RESET << std::endl;
+	std::cout << GREEN << "Creating a WrongAnimal from the type: " << this->_type << RESET << std::endl;
 }
 
 

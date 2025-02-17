@@ -4,24 +4,25 @@
 #include "../includes/WrongAnimal.hpp"
 #include "../includes/WrongCat.hpp"
 
-int main()
+int	main()
 {
-    const Animal* meta = new Animal();
-    const Animal* dog = new Dog();
-    const Animal* cat = new Cat();
-    const WrongAnimal* wrong = new WrongCat();
+	Animal	*array[10];
+	int		i = 0;
 
-    std::cout << dog->getType() << " " << std::endl;
-    std::cout << cat->getType() << " " << std::endl;
-    std::cout << wrong->getType() << " " << std::endl;
-    cat->makeSound();
-    dog->makeSound();
-    wrong->makeSound();
-    meta->makeSound();
+	while (i < 5)
+		array[i++] = new Dog();
+	while (i < 10)
+		array[i++] = new Cat();
 
+	array[4]->makeSound();
+	array[7]->makeSound();
+    std::cout << GREEN << "==============IDEAS===========" << RESET << std::endl;
 
-    delete meta;
-    delete cat;
-    delete dog;
-    return 0;
+    std::cout << GREEN << ((Dog *)array[4])->getIdea(4) << RESET << std::endl;
+    std::cout << GREEN << ((Dog *)array[7])->getIdea(7) << RESET << std::endl;
+
+	for (i = 0; i < 10; i++)
+        delete array[i];
+		
+	return 0;
 }
