@@ -23,5 +23,6 @@ int main()
     delete meta;
     delete cat;
     delete dog;
+    delete wrong;
     return 0;
 }
