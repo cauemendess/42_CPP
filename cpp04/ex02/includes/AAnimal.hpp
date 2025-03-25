@@ -29,7 +29,4 @@ public:
     virtual ~AAnimal();
 };
 
-
-
-
 #endif
