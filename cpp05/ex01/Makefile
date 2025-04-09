@@ -26,8 +26,8 @@ CFLAGS	=	-Wall -Werror -Wextra -g -std=c++98 -I.
 RM		=	rm -rf
 
 # Dir and file names
-NAME	=	Animal
-SRCS	=	./src/main.cpp ./src/Bureaucrat.cpp
+NAME	=	Bureaucrat
+SRCS	=	./src/main.cpp ./src/Bureaucrat.cpp ./src/Form.cpp
 OBJS	=	$(SRCS:.cpp=.o)
 INC		=	$(wildcard *.hpp)
 
