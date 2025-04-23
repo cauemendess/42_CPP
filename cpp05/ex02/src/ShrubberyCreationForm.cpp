@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 # include "./includes/ShrubberyCreationForm.hpp"
+=======
+# include "ShrubberyCreationForm.hpp"
+>>>>>>> 946ccfbc1774ef307f2642ef362384c61f80cc13
 #include <fstream>
 
 ShrubberyCreationForm::ShrubberyCreationForm(std::string target) : AForm("ShrubberyCreationForm", 145, 137)

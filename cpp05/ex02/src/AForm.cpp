@@ -79,11 +79,14 @@ const char *AForm::GradeTooLowException::what() const throw()
     return ("AForm grade is too low");
 }
 
+<<<<<<< HEAD
 int AForm::getGradeToExecute(void) const
 {
 	return (this->_gradeToExecute);
 }
 
+=======
+>>>>>>> 946ccfbc1774ef307f2642ef362384c61f80cc13
 const char *AForm::FormNotSignedException::what() const throw()
 {
     return ("AForm is not signed");

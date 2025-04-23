@@ -1,6 +1,11 @@
+<<<<<<< HEAD
 # include "./includes/RobotomyRequestForm.hpp"
 # include <ctime>
 # include <cstdlib>
+=======
+# include "RobotomyRequestForm.hpp"
+# include <ctime>
+>>>>>>> 946ccfbc1774ef307f2642ef362384c61f80cc13
 
 RobotomyRequestForm::RobotomyRequestForm(std::string target) : AForm("RobotomyRequestForm", 72, 45)
 {
