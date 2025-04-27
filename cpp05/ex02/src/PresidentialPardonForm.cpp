@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 #include "./includes/PresidentialPardonForm.hpp"
-=======
-#include "PresidentialPardonForm.hpp"
->>>>>>> 946ccfbc1774ef307f2642ef362384c61f80cc13
 
 PresidentialPardonForm::PresidentialPardonForm(std::string target) : AForm("PresidentialPardonForm", 25, 5) , _target(target)
 {
