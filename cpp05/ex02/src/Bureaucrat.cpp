@@ -6,13 +6,12 @@ Bureaucrat::Bureaucrat() : _name("default"), _grade(150)
     std::cout << "Bureaucrat " << _name << " created" << std::endl;
 }
 
-Bureaucrat::Bureaucrat(std::string name, int grade) : _name(name)
+Bureaucrat::Bureaucrat(std::string name, int grade) : _name(name), _grade(grade)
 {
 	if (grade < 1)
 		throw Bureaucrat::GradeTooHighException();
 	if (grade > 150)
 		throw Bureaucrat::GradeTooLowException();
-	this->_grade = grade;
 	std::cout << "Bureaucrat " << _name << " created" << std::endl;
 }
 
