@@ -9,7 +9,6 @@ typedef struct s_data
 {
     int         i;
     float       f;
-    double      d;
     std::string s;
 }               Data;
 
