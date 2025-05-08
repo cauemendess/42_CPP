@@ -26,8 +26,8 @@ CFLAGS	=	-Wall -Werror -Wextra -g -std=c++98 -I.
 RM		=	rm -rf
 
 # Dir and file names
-NAME	=	Serializer
-SRCS	=	main.cpp Serializer.cpp 
+NAME	=	Base
+SRCS	=	main.cpp Base.cpp 
 OBJS	=	$(SRCS:.cpp=.o)
 INC		=	$(wildcard *.hpp)
 
