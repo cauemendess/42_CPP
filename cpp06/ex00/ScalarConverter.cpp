@@ -94,3 +94,84 @@ void ScalarConverter::printInt(int i)
         std::cout << "int: " << i << std::endl;
 }
 
+bool ScalarConverter::checkType(const std::string &str)
+{
+	_str = str;
+	int i = 0;
+
+	while (i < 8)
+	{
+		if (str == _pseudoLiterals[i])
+		{
+			_type = PSEUDO;
+			return false;
+		}
+		i++;
+	}
+	if (str.length() == 1 && !isdigit(str[0]))
+	{
+		_type = CHAR;
+		return false;
+	}
+	if (checkInt(str))
+		return true;
+	return false;
+}
+
+bool ScalarConverter::checkInt(const std::string &str)
+{
+	int i = 0;
+	int dot = 0;
+
+	if (str[i] == '+' || str[i] == '-')
+		i++;
+	while (i < (int)str.length())
+	{
+		if (str[i] == '.')
+        {
+            dot++;
+            if (dot > 1)
+            {
+                std::cout << "Error: invalid input" << std::endl;
+                return true;
+            }
+        }
+        else if (!isdigit(str[i]) && !(str[i] == 'f' && i == (int)str.length() - 1))
+        {
+            std::cout << "Error: invalid input" << std::endl;
+            return true;
+        }
+			i++;
+	}
+	if (dot == 0 && str[str.length() - 1] == 'f')
+	{
+		std::cout << "Error: invalid input" << std::endl;
+		return true;
+	}	
+	else if (dot == 1)
+		_type = (str[str.length() - 1] == 'f') ? FLOAT : DOUBLE;
+	else
+		_type = INT;
+	return false;
+}
+
+void ScalarConverter::printPseudo()
+{
+	std::cout << "char: impossible" << std::endl;
+	std::cout << "int: impossible" << std::endl;
+	if (_str == "nan" || _str == "nanf")
+		{
+			std::cout << "float: nanf" << std::endl;
+			std::cout << "double: nan" << std::endl;
+		}
+	else if (_str == "+inf" || _str == "+inff" || _str == "inf" || _str == "inff")
+		{
+			std::cout << "float: inff" << std::endl;
+			std::cout << "double: inf" << std::endl;
+		}
+	else if (_str == "-inf" || _str == "-inff")
+		{
+			std::cout << "float: -inff" <<  std::endl;
+			std::cout << "double: -inf" <<  std::endl;
+		}
+}
