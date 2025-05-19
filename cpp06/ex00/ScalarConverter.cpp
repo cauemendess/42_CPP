@@ -21,6 +21,30 @@ ScalarConverter::ScalarConverter(const ScalarConverter &other)
     (void)other;
 }
 
+void ScalarConverter::convert(const std::string &str)
+{
+    if(checkType(str))
+        return ;
+    switch (_type)
+    {
+    case PSEUDO:
+        printPseudo();
+        break;
+    case CHAR:
+        convertChar(str);
+        break;
+    case INT:
+        convertInt(str);
+        break;
+    case FLOAT:
+        convertFloat(str);
+        break;
+    case DOUBLE:
+        convertDouble(str);
+        break;
+    }
+}
+
 void ScalarConverter::convertChar(const std::string &str)
 {
     char c = str[0];
@@ -36,7 +60,7 @@ void ScalarConverter::convertChar(const std::string &str)
 
 void ScalarConverter::convertInt(const std::string &str)
 {
-    int i = std::stoi(str);
+    int i = atoi(str.c_str());
     char c = static_cast<char>(i);
     float f = static_cast<float>(i);
     double d = static_cast<double>(i);
@@ -49,7 +73,7 @@ void ScalarConverter::convertInt(const std::string &str)
 
 void ScalarConverter::convertFloat(const std::string &str)
 {
-    float f = std::stof(str);
+    float f = atof(str.c_str());
     char c = static_cast<char>(f);
     int i = static_cast<int>(f);
     double d = static_cast<double>(f);
@@ -62,7 +86,7 @@ void ScalarConverter::convertFloat(const std::string &str)
 
 void ScalarConverter::convertDouble(const std::string &str)
 {
-    double d = std::stod(str);
+    double d = atof(str.c_str());
     char c = static_cast<char>(d);
     int i = static_cast<int>(d);
     float f = static_cast<float>(d);
@@ -78,7 +102,7 @@ void ScalarConverter::printChar(char c)
     if(atol(_str.c_str()) < -128 || atol(_str.c_str()) > 127)
         std::cout << "char: impossible" << std::endl;
 
-    if (std::isprint(c))
+    else if (std::isprint(c))
         std::cout << "char: '" << c << "'" << std::endl;
     else
         std::cout << "char: Non displayable" << std::endl;
@@ -92,6 +116,23 @@ void ScalarConverter::printInt(int i)
         std::cout << "int: impossible" << std::endl;
     else
         std::cout << "int: " << i << std::endl;
+}
+
+void ScalarConverter::printDouble(double d)
+{
+    
+    if (atol(_str.c_str()) < INT_MIN || atol(_str.c_str()) > INT_MAX)
+        std::cout << "double: impossible" << std::endl;
+    else
+        std::cout << "double: " << std::fixed << std::setprecision(1) << d << std::endl;
+}
+
+void ScalarConverter::printFloat(float f)
+{
+    if (atol(_str.c_str()) < INT_MIN || atol(_str.c_str()) > INT_MAX)
+		std::cout << "float: impossible" << std::endl;
+	else
+		std::cout << "float: " << std::fixed << std::setprecision(1) << f << "f" << std::endl;
 }
 
 bool ScalarConverter::checkType(const std::string &str)
@@ -175,3 +216,6 @@ void ScalarConverter::printPseudo()
 			std::cout << "double: -inf" <<  std::endl;
 		}
 }
+
+int ScalarConverter::_type = PSEUDO;
+std::string ScalarConverter::_str = "";

@@ -1,10 +1,13 @@
 #ifndef SCALARCONVERTER_HPP
 #define SCALARCONVERTER_HPP
 
-#include <iostream>
-#include <string>
-#include <climits>
-#include <cstdlib>
+# include <limits.h>
+# include <cctype>
+# include <cstdlib>
+# include <iomanip>
+# include <iostream>
+# include <string>
+# include <cfloat>
 
 enum {
     CHAR,
