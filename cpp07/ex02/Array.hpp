@@ -3,14 +3,7 @@
 
 #include <iostream>
 #include <cstddef>
-#include <sstream>
 
-
-template <typename T>
-void printElement(const T &element);
-
-template <typename T>
-std::string toString(const T &value);
 
 template <typename T>
 class Array {
@@ -82,19 +75,5 @@ public:
     };
 
 };
-
-template <typename T>
-std::string toString(const T &value)
-{
-    std::stringstream ss;
-    ss << value;
-    return ss.str();
-}
-
-template <typename T>
-void printElement(const T &element)
-{
-    std::cout << toString(element) << std::endl;
-}
 
 #endif
