@@ -26,8 +26,8 @@ CFLAGS	=	-Wall -Werror -Wextra -g -std=c++98 -I.
 RM		=	rm -rf
 
 # Dir and file names
-NAME	=	Base
-SRCS	=	main.cpp easyfind.tpp 
+NAME	=	easyfind
+SRCS	=	main.cpp
 OBJS	=	$(SRCS:.cpp=.o)
 INC		=	$(wildcard *.hpp)
 
