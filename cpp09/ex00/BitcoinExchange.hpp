@@ -19,7 +19,7 @@ public:
     void processFile(const std::string &filename);
 private:
     std::map<std::string, float> exchangeRates;
-
+    void _saveFromFile(const std::string &filename);
 
 
 };
