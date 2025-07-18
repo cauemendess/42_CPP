@@ -28,7 +28,7 @@ void BitcoinExchange::loadDatabase(std::string filename)
 {
     std::ifstream file(filename.c_str());
     std::string line;
-    size_t i, lineNumber;
+    size_t i, lineNumber = 0;
     if(!file.is_open())
         throw std::runtime_error("unable to open 'data.csv' file");
     while (std::getline(file, line))
