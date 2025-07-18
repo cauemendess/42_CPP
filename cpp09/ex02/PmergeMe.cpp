@@ -105,7 +105,8 @@ std::deque<int> PmergeMe::dequeSort(std::deque<int> input)
     std::vector<std::pair<int, int> > pairs;
     std::deque<int> unpaired;
 
-    for (size_t i = 0; i + 1 < input.size(); i += 2) {
+    for (size_t i = 0; i + 1 < input.size(); i += 2)
+    {
         int a = input[i];
         int b = input[i + 1];
         if (a > b)
@@ -117,7 +118,8 @@ std::deque<int> PmergeMe::dequeSort(std::deque<int> input)
         unpaired.push_back(input[input.size() - 1]);
 
     std::deque<int> smaller, larger;
-    for (size_t i = 0; i < pairs.size(); ++i) {
+    for (size_t i = 0; i < pairs.size(); ++i)
+    {
         smaller.push_back(pairs[i].first);
         larger.push_back(pairs[i].second);
     }
