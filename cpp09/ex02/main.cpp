@@ -7,7 +7,7 @@ bool validNumber(const std::string &expression)
     iss >> std::noskipws >> l;
     if (iss.eof() && !iss.fail())
     {
-        return l > 0;
+        return l >= 0;
     }
     return false;
 }
